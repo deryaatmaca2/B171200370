@@ -1,0 +1,85 @@
+﻿@model  HomeArticles
+<!DOCTYPE html>
+<html lang="tr">
+<body>
+    <!-- Page Header -->
+    <header class="masthead" style=" width:1115px; height:580px; background-image: url('../../Files/Uploads/Photos/What-Am-I-Doing-Here.png')  ";
+">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1></h1>
+                        <h2 class="subheading"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content -->
+    <div class="row">
+        @foreach (var item in Model.Articles)
+        {
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="@Url.Content(item.PhotoUrl)" alt="@item.ArticleTitle"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">@item.ArticleTitle</a>
+                        </h4>
+                        <p class="card-text"> @item.Description.Substring(0, 100) ...</p>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+    
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; @DateTime.Now.Year</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/startbootstrap-clean-blog-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/startbootstrap-clean-blog-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="~/Content/startbootstrap-clean-blog-gh-pages/js/clean-blog.min.js"></script>
+</body>
+</html>
